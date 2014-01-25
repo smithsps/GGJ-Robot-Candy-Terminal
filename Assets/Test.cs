@@ -12,8 +12,17 @@ public class Test : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		string cmd = terminal.GetCommand();
-		if ("MV".Equals(cmd)) {
-			transform.position += new Vector3(1,0,0);
+		if ("MV UP".Equals(cmd)) {
+			rigidbody2D.AddForce(new Vector2(0,10));
+		} else if ("MV DN".Equals(cmd)) {
+			rigidbody2D.AddForce(new Vector2(0,-10));
+		} else if ("MV RT".Equals(cmd)) {
+			rigidbody2D.AddForce(new Vector2(10,0));
+		} else if ("MV LT".Equals(cmd)) {
+			rigidbody2D.AddForce(new Vector2(-10,0));
+		} else if ("IDSPISPOPD".Equals(cmd)) {
+			this.collider2D.enabled = !this.collider2D.enabled;	
 		}
+
 	}
 }
