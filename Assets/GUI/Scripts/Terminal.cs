@@ -10,7 +10,7 @@ public class Terminal : MonoBehaviour {
 	}
 
 	// Height in lines
-	private const int HEIGHT = 5;
+	private const int HEIGHT = 9;
 
 	private string[] termLines;
 	private int curLine;
