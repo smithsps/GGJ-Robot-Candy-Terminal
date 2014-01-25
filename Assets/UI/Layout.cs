@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UI : MonoBehaviour {
+public class Layout : MonoBehaviour {
 
 	public Texture OverlordLayoutTexture;
 	public Texture PeterLayoutTexture;
