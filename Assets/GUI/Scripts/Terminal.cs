@@ -10,7 +10,7 @@ public class Terminal : MonoBehaviour {
 	}
 
 	// Height in lines
-	private const int HEIGHT = 9;
+	private const int HEIGHT = 8;
 
 	private string[] termLines;
 	private int curLine;
@@ -58,7 +58,7 @@ public class Terminal : MonoBehaviour {
 	// GUI Update
 	void OnGUI () {
 		int heightPx = HEIGHT*termStyle.fontSize + termStyle.padding.top + termStyle.padding.bottom;
-		Rect termRect = new Rect(0, Screen.height-heightPx, Screen.width, heightPx);
+		Rect termRect = new Rect(5, 532, Screen.width-10, heightPx+5);
 
 		string termString = "";
 		for (int i = 0; i <= curLine; ++i) {

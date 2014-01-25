@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: f44d9be6ba1f0444a840a3b9c6388c76
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - OverlordLayoutTexture: {fileID: 2800000, guid: 5aa8c9c20563e3343a5c71595a495185,
+      type: 3}
+  - PeterLayoutTexture: {fileID: 2800000, guid: 447f88590424f1a4abca98d7189e10c5,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
