@@ -15,12 +15,7 @@ public class Netwok : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Network.isServer)
-		{
-			Vector3 moveDir = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-			float speed = 5;
-			transform.Translate(speed * moveDir * Time.deltaTime);
-		}
+
 	}
 
 	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
