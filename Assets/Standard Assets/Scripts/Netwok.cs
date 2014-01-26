@@ -18,7 +18,7 @@ public class Netwok : MonoBehaviour
 
 	}
 
-	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+/*	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
 	{
 		if (stream.isWriting)
 		{
@@ -37,7 +37,7 @@ public class Netwok : MonoBehaviour
 			stream.Serialize(ref receivedVelocity);
 		}
 	}
-
+*/
 	void OnGUI()
 	{
 		if (Network.peerType == NetworkPeerType.Disconnected)

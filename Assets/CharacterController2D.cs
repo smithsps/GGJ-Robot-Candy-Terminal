@@ -4,6 +4,8 @@ using System.Collections;
 public class CharacterController2D : MonoBehaviour 
 {
 	public float speed = 3;
+	Vector3 oldPosition;
+
 
 	// Use this for initialization
 	void Start () 
@@ -17,7 +19,7 @@ public class CharacterController2D : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(true)//Network.isClient)
+		if(Network.isClient)
 		{
 			float xDir = Input.GetAxis("Horizontal");
 			float yDir = Input.GetAxis("Vertical");
@@ -30,8 +32,23 @@ public class CharacterController2D : MonoBehaviour
 			Vector3 moveDir = new Vector3(xDir, yDir, 0);
 
 			transform.Translate(speed * moveDir * Time.deltaTime, Space.World);
+
+			if(Vector3.Distance(transform.position, oldPosition) > .01f)
+			{
+				oldPosition = transform.position;
+				networkView.RPC("UpdateMovement", RPCMode.Others, transform.position, transform.rotation);
+			}
 		}
 	}
+
+	[RPC]
+	void UpdateMovement(Vector3 newPosition, Quaternion newRotation)
+	{
+		transform.position = newPosition;
+		transform.rotation = newRotation;
+	}
+
+
 
 	void RotateSprite(float xDir, float yDir)
 	{
